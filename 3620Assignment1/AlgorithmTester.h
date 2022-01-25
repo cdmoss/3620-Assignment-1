@@ -7,7 +7,7 @@ private:
 	vector<AlgorithmRunner*> algorithms;
 public:
 	AlgorithmTester() {};
-	void performTests();
+	void performTests(int n);
 	void addAlgorithm(AlgorithmRunner* alg);
 	void saveResultsToCsv();
 };

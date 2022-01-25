@@ -5,14 +5,18 @@
 AlgorithmRunner::AlgorithmRunner(function<int(int)> algorithm, std::string label) : algorithm(algorithm), label(label) {}
 
 double AlgorithmRunner::getPrevRunningTime() {
-	return 0.0;
+	return prevRunningTime;
 }
 
-double AlgorithmRunner::runSnippet()
+double AlgorithmRunner::getPrevSize() {
+	return size;
+}
+
+double AlgorithmRunner::runSnippet(int n)
 {
 	// start the clock, run the algorithm, then end the click
 	double runningTime = clock();
-	this->algorithm(10);
+	this->algorithm(n);
 	this->prevRunningTime = clock() - runningTime;
 
 	return this->prevRunningTime;
